@@ -20,7 +20,8 @@ void BarszczSosnowskiego::rozmnazanie(int x, int y) {
 }
 
 void BarszczSosnowskiego::zabij(int x, int y) {
-    cout<<"Barszcz Sosnowskiego zabija "<<swiat->mapa[x][y]->nazwa()<<"!\n";
+    cout<<"Pine Borscht kills "<<swiat->mapa[x][y]->nazwa()<<"!\n";
+    if (swiat->mapa[x][y]->znak == 'H') swiat->killHuman();
     if (swiat->organizmy.findElement(x,y)) swiat->organizmy.delElement(x,y);
     else swiat->nowoNarodzone.delElement(x,y);
     swiat->mapa[x][y] = nullptr;
@@ -35,8 +36,9 @@ void BarszczSosnowskiego::akcja() {
 }
 
 void BarszczSosnowskiego::kolizja(Organizm* napastnik) {
+    if (napastnik->znak == 'H') swiat->killHuman();
     Roslina::kolizja(napastnik);
-    cout<<"Barszcz Sosnowskiego zabija "<<napastnik->nazwa()<<"!\n";
+    cout<<"Pine Borscht kills "<<napastnik->nazwa()<<"!\n";
     if (swiat->organizmy.findElement(X,Y)) swiat->organizmy.delElement(X,Y);
     else swiat->nowoNarodzone.delElement(X,Y);
     swiat->mapa[X][Y] = nullptr;

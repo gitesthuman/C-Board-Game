@@ -6,7 +6,7 @@ Mlecz::Mlecz(int X, int Y, Swiat *swiat) {
     this->swiat = swiat;
     this->sila = 0;
     this->inicjatywa = 0;
-    this->znak = 'm';
+    this->znak = 'd';
 }
 
 void Mlecz::akcja() {

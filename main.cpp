@@ -18,21 +18,26 @@ int main() {
     srand((unsigned) time(0));
     Swiat nowyswiat = Swiat(30,30);
     nowyswiat.dodajOrganizm(new Wilk(2,4,&nowyswiat));
+    nowyswiat.dodajOrganizm(new Wilk(3,5,&nowyswiat));
     nowyswiat.dodajOrganizm(new Owca(7,17,&nowyswiat));
+    nowyswiat.dodajOrganizm(new Owca(8,16,&nowyswiat));
     nowyswiat.dodajOrganizm(new Trawa(5,8,&nowyswiat));
     nowyswiat.dodajOrganizm(new Antylopa(22,5,&nowyswiat));
+    nowyswiat.dodajOrganizm(new Antylopa(22,7,&nowyswiat));
     nowyswiat.dodajOrganizm(new BarszczSosnowskiego(25,20,&nowyswiat));
     nowyswiat.dodajOrganizm(new Guarana(10,5,&nowyswiat));
     nowyswiat.dodajOrganizm(new Mlecz(29,29,&nowyswiat));
     nowyswiat.dodajOrganizm(new WilczeJagody(19,19,&nowyswiat));
     nowyswiat.dodajOrganizm(new Zolw(12,29,&nowyswiat));
+    nowyswiat.dodajOrganizm(new Zolw(13,28,&nowyswiat));
     nowyswiat.dodajOrganizm(new Lis(14,5,&nowyswiat));
-    nowyswiat.dodajOrganizm(new Czlowiek(15,15,&nowyswiat));
-    nowyswiat.rysujSwiat();
+    nowyswiat.dodajOrganizm(new Lis(14,7,&nowyswiat));
+    nowyswiat.dodajOrganizm(new Czlowiek(15, 15, &nowyswiat));
     cout<<"\n";
-    for (int i = 0 ; i < 1000; i++)
+    while (nowyswiat.isHumanAlive())
     {
         nowyswiat.wykonajTure();
     }
+    cout << "GAME OVER!\n\n";
     return 0;
 }

@@ -13,9 +13,10 @@ public:
     void wykonajTure();
     void rysujSwiat() const;
     void dodajOrganizm(Organizm* organizm);
-    void dodajOrganizm(Czlowiek czl);
     int getWysoskosc() const;
     int getSzerokosc() const;
+    bool isHumanAlive();
+    void killHuman();
     ~Swiat();
 
 private:

@@ -11,6 +11,7 @@ private:
 
 public:
     Czlowiek(int X, int Y, Swiat* swiat);
+    ~Czlowiek();
     explicit Czlowiek(Organizm* &&organizm);
     void akcja() override;
     bool umiejetnoscTrwa();

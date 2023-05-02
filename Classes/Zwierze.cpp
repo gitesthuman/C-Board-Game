@@ -184,9 +184,10 @@ void Zwierze::kolizja(Organizm* napastnik) {
         }
     }
     else {//walka
-        cout<<"Walka! ";
+        cout<<"Fight! ";
         if (napastnik->sila >= this->sila) {
-            cout<<napastnik->nazwa()<<" pokonuje "<<this->nazwa()<<"!\n";
+            if (znak == 'H') swiat->killHuman();
+            cout<<napastnik->nazwa()<<" defeats "<<this->nazwa()<<"!\n";
             if (swiat->organizmy.findElement(X,Y)) swiat->organizmy.delElement(X,Y);
             else swiat->nowoNarodzone.delElement(X,Y);
             swiat->mapa[X][Y] = napastnik;
@@ -197,7 +198,8 @@ void Zwierze::kolizja(Organizm* napastnik) {
             swiat->mapa[X][Y]->Y = Y;
         }
         else {
-            cout<<this->nazwa()<<" pokonuje "<<napastnik->nazwa()<<"!\n";
+            cout<<this->nazwa()<<" defeats "<<napastnik->nazwa()<<"!\n";
+            if (napastnik->znak == 'H') swiat->killHuman();
             swiat->mapa[napastnik->X][napastnik->Y] = nullptr;
             if (swiat->organizmy.findElement(napastnik->X,napastnik->Y))
                 swiat->organizmy.delElement(napastnik->X,napastnik->Y);

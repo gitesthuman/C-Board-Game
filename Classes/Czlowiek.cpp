@@ -14,7 +14,7 @@ using namespace std;
 void Czlowiek::rozmnazanie(int x, int y) {}
 
 void Czlowiek::pal(int x, int y) {
-    cout<<"Czlowiek spala "<<swiat->mapa[x][y]->nazwa()<<"!\n";
+    cout<<"Human burns "<<swiat->mapa[x][y]->nazwa()<<"!\n";
     if (swiat->organizmy.findElement(x,y)) swiat->organizmy.delElement(x,y);
     else swiat->nowoNarodzone.delElement(x,y);
     swiat->mapa[x][y] = nullptr;
@@ -33,7 +33,7 @@ Czlowiek::Czlowiek(int X, int Y, Swiat *swiat) {
     this->swiat = swiat;
     this->sila = 5;
     this->inicjatywa = 4;
-    this->znak = 'C';
+    this->znak = 'H';
     this->czasTrwaniaUmiejetnosci = 0;
     this->coolDownUmiejetnosci = 0;
 }
@@ -75,7 +75,7 @@ void Czlowiek::akcja() {
                 if (coolDownUmiejetnosci == 0 && czasTrwaniaUmiejetnosci == 0) {
                     czasTrwaniaUmiejetnosci = 5;
                     coolDownUmiejetnosci = 5;
-                    cout<<"Calopalenie atywowane!\n";
+                    cout<<"Holocaust activated!\n";
                     specjalnaUmiejetnosc();
                 }
                 break;
@@ -84,6 +84,7 @@ void Czlowiek::akcja() {
         }
         if (stop) break;
     }
+    system("cls");
     if (swiat->mapa[x2][y2] == nullptr) ruch(x2, y2);
     else swiat->mapa[x2][y2]->kolizja(this);
 }
@@ -99,7 +100,12 @@ Czlowiek::Czlowiek(Organizm* &&organizm) {
     this->swiat = organizm->swiat;
     this->sila = 5;
     this->inicjatywa = 4;
-    this->znak = 'C';
+    this->znak = 'H';
     this->czasTrwaniaUmiejetnosci = 0;
     this->coolDownUmiejetnosci = 0;
+}
+
+Czlowiek::~Czlowiek() {
+    cout << "GAME OVER";
+    //swiat->killHuman();
 }

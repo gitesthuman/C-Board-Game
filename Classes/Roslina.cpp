@@ -4,7 +4,7 @@
 using namespace std;
 
 void Roslina::kolizja(Organizm* napastnik) {
-    cout<<napastnik->nazwa()<<" zjada "<<this->nazwa()<<"!\n";
+    cout<<napastnik->nazwa()<<" eats "<<this->nazwa()<<"!\n";
     if (swiat->organizmy.findElement(X,Y)) swiat->organizmy.delElement(X,Y);
     else swiat->nowoNarodzone.delElement(X,Y);
     swiat->mapa[X][Y] = napastnik;

@@ -12,28 +12,28 @@ void Organizm::rysowanie() const {
 const char * Organizm::nazwa() const {
     switch (znak) {
         case 'A':
-            return "Antylopa";
+            return "Antelope";
         case 'b':
-            return "Barszcz Sosnowskiego";
-        case 'g':
+            return "Pine Borscht";
+        case 'G':
             return "Guarana";
-        case 'L':
-            return "Lis";
-        case 'm':
-            return "Mlecz";
-        case 'O':
-            return "Owca";
-        case 't':
-            return "Trawa";
-        case 'w':
-            return "Wilcze Jagody";
+        case 'F':
+            return "Fox";
+        case 'd':
+            return "Dandelion";
+        case 'S':
+            return "Sheep";
+        case 'g':
+            return "Grass";
+        case 'n':
+            return "Deadly Nightshade";
         case 'W':
-            return "Wilk";
-        case 'Z':
-            return "Zolw";
-        case 'C':
-            return "Czlowiek";
+            return "Wolf";
+        case 'T':
+            return "Turtoise";
+        case 'H':
+            return "Human";
         default:
-            return "None";
+            return "Undefined";
     }
 }

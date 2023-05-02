@@ -31,7 +31,7 @@ void Antylopa::kolizja(Organizm* napastnik) {
             if (kierunki[i]) ileKierunkow++;
 
         if (ileKierunkow > 0) {//unik udany
-            cout << "Antylopa robi unik przed " << napastnik->nazwa() << "!\n";
+            cout << "Antelope dodges attack from " << napastnik->nazwa() << "!\n";
             int kierunek = rand() % ileKierunkow; //index kierunku (spośród możliwych)
             int licznik = -1;
             int index;

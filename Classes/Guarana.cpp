@@ -6,7 +6,7 @@ Guarana::Guarana(int X, int Y, Swiat* swiat) {
     this->swiat = swiat;
     this->sila = 0;
     this->inicjatywa = 0;
-    this->znak = 'g';
+    this->znak = 'G';
 }
 
 void Guarana::rozmnazanie(int x, int y) {

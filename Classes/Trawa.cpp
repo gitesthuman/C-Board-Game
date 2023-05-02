@@ -6,7 +6,7 @@ Trawa::Trawa(int X, int Y, Swiat *swiat) {
     this->swiat = swiat;
     this->sila = 0;
     this->inicjatywa = 0;
-    this->znak = 't';
+    this->znak = 'g';
 }
 
 void Trawa::rozmnazanie(int x, int y) {

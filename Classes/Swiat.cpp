@@ -22,6 +22,7 @@ void Swiat::wykonajTure() {
         if (czlowiek != nullptr) {
             if (czlowiek->umiejetnoscTrwa()) czlowiek->specjalnaUmiejetnosc();
         }
+        else return;
     }
     cout<<'\n';
     while (nowoNarodzone.getSize() > 0) {
@@ -48,6 +49,7 @@ void Swiat::rysujSwiat() const {
 }
 
 void Swiat::dodajOrganizm(Organizm* organizm) {
+    if (Czlowiek* c = dynamic_cast<Czlowiek*>(organizm)) this->czlowiek = c;
     organizmy.add(organizm);
     mapa[organizm->X][organizm->Y] = organizm;
 }
@@ -60,14 +62,14 @@ int Swiat::getSzerokosc() const {
     return M;
 }
 
-void Swiat::dodajOrganizm(Czlowiek czl) {
-    this->czlowiek = &czl;
-    dodajOrganizm(&czl);
+bool Swiat::isHumanAlive() {
+    return czlowiek != nullptr;
+}
+
+void Swiat::killHuman() {
+    czlowiek = nullptr;
 }
 
 Swiat::~Swiat() {
-    for (int i = 0; i < N; ++i)
-        for (int j = 0; j < M; ++j)
-            delete mapa[j][i];
     delete mapa;
 }

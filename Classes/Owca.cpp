@@ -6,7 +6,7 @@ Owca::Owca(int X, int Y, Swiat *swiat) {
     this->swiat = swiat;
     this->sila = 4;
     this->inicjatywa = 4;
-    this->znak = 'O';
+    this->znak = 'S';
 }
 
 void Owca::rozmnazanie(int x, int y) {

@@ -9,7 +9,7 @@ Zolw::Zolw(int X, int Y, Swiat *swiat) {
     this->swiat = swiat;
     this->sila = 2;
     this->inicjatywa = 1;
-    this->znak = 'Z';
+    this->znak = 'T';
 }
 
 void Zolw::akcja() {
@@ -18,7 +18,7 @@ void Zolw::akcja() {
 
 void Zolw::kolizja(Organizm* napastnik) {
     if (znak != napastnik->znak && napastnik->sila < 5) {//obrona
-        cout << "Zolw broni sie przed " << napastnik->nazwa() << "!\n";
+        cout << "Turtoise defends from " << napastnik->nazwa() << "!\n";
         return;
     }
     Zwierze::kolizja(napastnik);
