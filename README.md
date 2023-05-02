@@ -9,5 +9,5 @@ You are playing a 2D board game as a human and you are trying to survive in a wo
 Each specie has unique stats and an ability to reproduce. Some have specific skills, i.e. Human can holocaust 
 all nearby organisms once upon some time.
 
-## Conntrols
+## Controls
 Use arrow kyes to move and X button to turn on your special ability.
